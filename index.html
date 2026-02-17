@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi Stream View</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topo">
+      <h1>🎥 Multi Stream View</h1>
+      <p>Adicione links de lives e assista várias transmissões ao mesmo tempo.</p>
+    </header>
+
+    <main>
+      <section class="painel-controle">
+        <h2>Adicionar live</h2>
+        <form id="form-live">
+          <label for="titulo">Título (opcional)</label>
+          <input id="titulo" name="titulo" type="text" placeholder="Ex.: Campeonato CS" />
+
+          <label for="url">URL de incorporação (embed)</label>
+          <input
+            id="url"
+            name="url"
+            type="url"
+            placeholder="https://player.twitch.tv/?channel=nome_do_canal&parent=localhost"
+            required
+          />
+
+          <button type="submit">Adicionar live</button>
+        </form>
+
+        <details>
+          <summary>Exemplos de links embed</summary>
+          <ul>
+            <li><strong>YouTube:</strong> https://www.youtube.com/embed/ID_DA_LIVE</li>
+            <li><strong>Twitch:</strong> https://player.twitch.tv/?channel=CANAL&parent=localhost</li>
+            <li><strong>Kick:</strong> use o link embed disponibilizado pelo canal/plataforma</li>
+          </ul>
+          <p class="dica">⚠️ Algumas plataformas bloqueiam exibição em iframe sem configurações específicas.</p>
+        </details>
+      </section>
+
+      <section>
+        <div id="grid" class="grid-lives"></div>
+      </section>
+    </main>
+
+    <template id="card-template">
+      <article class="card-live">
+        <div class="card-live__cabecalho">
+          <h3></h3>
+          <button class="remover" type="button">Remover</button>
+        </div>
+        <div class="player-wrap">
+          <iframe allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
