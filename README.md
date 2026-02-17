@@ -55,3 +55,27 @@ Esse teste valida:
 - Ajustar volume por live.
 - Salvar perfis de streams favoritos.
 - Adicionar autenticação para ter conta de usuário.
+
+## Rodar localmente (só você acessa)
+
+Use este comando:
+
+```bash
+./serve_local.sh
+```
+
+Depois abra no navegador:
+
+```text
+http://127.0.0.1:8000/index.html
+```
+
+> Esse endereço (`127.0.0.1`) só funciona no seu próprio computador.
+> Ou seja: apenas você vê o site localmente.
+
+Se quiser outra porta, passe no comando:
+
+```bash
+./serve_local.sh 8080
+```
+
